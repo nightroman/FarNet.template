@@ -6,7 +6,7 @@ FarNet module template for C# and F# projects
 [FarNet]: https://github.com/nightroman/FarNet#readme
 
 With [.NET SDK] installed with Visual Studio 2017+ or manually, the easiest way
-to create module projects for [[FarNet]] is using *FarNet.template* from the
+to create module projects for [FarNet] is using *FarNet.template* from the
 NuGet gallery.
 
 Projects created from the template can be used for development and debugging in
