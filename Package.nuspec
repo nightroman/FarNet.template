@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>FarNet.template</id>
+    <version>1.0.2</version>
+    <releaseNotes>
+Tweak assets copying in project files.
+    </releaseNotes>
+    <description>
+FarNet module template for C# and F# projects
+
+----
+
+https://github.com/nightroman/FarNet.template#readme
+
+----
+    </description>
+    <authors>Roman Kuzmin</authors>
+    <owners>Roman Kuzmin</owners>
+    <projectUrl>https://github.com/nightroman/FarNet.template</projectUrl>
+    <icon>images\FarNetLogo.png</icon>
+    <license type="expression">BSD-2-Clause</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>FarManager FarNet Module Template CSharp FSharp</tags>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+</package>
