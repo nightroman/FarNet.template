@@ -31,8 +31,7 @@ The list should contain "FarNet module":
 ```
 Templates                                         Short Name       Language          Tags
 --------------------------------------------------------------------------------------------------------
-Console Application                               console          [C#], F#, VB      Common/Console
-Class library                                     classlib         [C#], F#, VB      Common/Library
+...
 FarNet module                                     farnet           [C#], F#          FarNet/Module
 ...
 ```

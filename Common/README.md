@@ -1,4 +1,3 @@
-
 # FarNet module created from template
 
 Before opening created projects in Visual Studio or VSCode ensure you have the
@@ -31,8 +30,7 @@ Requirements:
 - *Name.csproj* or *Name.fsproj* - project file
 - *Class1.cs* or *Class1.fs* - plugin menu item "Hello"
 
-All projects have references to the mandatory *FarNet* and optional
-*FarNet.Tools* and *FarNet.Settings*.
+All projects have references to *FarNet* and *FarNet.Tools*.
 
 F# projects have references to the mandatory *FSharp.Core.dll* and optional
 *FarNet.FSharp.dll*. These assemblies are installed together with the module

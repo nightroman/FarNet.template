@@ -43,7 +43,8 @@ task install {
 }
 
 task uninstall {
-	exec {dotnet new -u FarNet.template}
+	# fails if not installed
+	dotnet new -u FarNet.template
 }
 
 function Test-Template($Command) {
