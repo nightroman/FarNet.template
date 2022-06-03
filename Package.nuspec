@@ -2,9 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FarNet.template</id>
-    <version>1.0.3</version>
+    <version>1.1.0</version>
     <releaseNotes>
-Tweak assets copying in project files.
+Use net472.
     </releaseNotes>
     <description>
 FarNet module template for C# and F# projects

@@ -8,7 +8,7 @@
     <DisableImplicitSystemValueTupleReference>true</DisableImplicitSystemValueTupleReference>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <RunPostBuildEvent>1</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
