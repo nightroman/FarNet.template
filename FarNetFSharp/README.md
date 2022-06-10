@@ -1,0 +1,3 @@
+# FarNet module FarNetCSharp
+
+`FarNetFSharp` is used for ...

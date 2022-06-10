@@ -29,17 +29,15 @@ dotnet new -l
 The list should contain "FarNet module":
 
 ```
-Templates                                         Short Name       Language          Tags
---------------------------------------------------------------------------------------------------------
-...
-FarNet module                                     farnet           [C#], F#          FarNet/Module
-...
+Templates       Short Name   Language   Tags
+-----------------------------------------------------
+FarNet module   farnet       [C#], F#   FarNet/Module
 ```
 
 Then you can create projects using the installed template.
 
 To create a C# (default) or F# module project, create a new folder with your
-module name, change to it and run:
+module name, change to it, and run:
 
 ```
 dotnet new farnet
@@ -54,3 +52,61 @@ To uninstall the template, run:
 ```
 dotnet new -u FarNet.template
 ```
+
+## FarNet module created from template
+
+Before opening created projects in Visual Studio or VSCode ensure you have the
+environment variable FARHOME set to the Far Manager directory. If it is missing
+then the development location `C:\Bin\Far\x64` is used, see the project file
+and change if needed. If you start Visual Studio or VSCode from Far Manager
+then FARHOME is set.
+
+## Visual Studio
+
+The project is ready to use in Visual Studio.
+
+## VSCode
+
+Requirements:
+
+- [VSCode C# extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) for C# projects and for debugging F# projects.
+- [VSCode F# extension](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) for F# projects.
+
+## Project content
+
+- *.vscode*
+    - *launch.json* - VSCode debug settings
+    - *tasks.json* - VSCode build task
+- *Properties*
+    - *launchSettings.json* - Visual Studio debug settings
+- *Name.csproj* or *Name.fsproj* - project file
+- *README.md* - documentation file
+- *Host.cs* or *Host.fs* - optional module host
+- *Tool1.cs* or *Tool1.fs* - plugin menu item "Hello"
+
+All projects have references to *FarNet* and *FarNet.Tools*.
+
+F# projects have references to the mandatory *FSharp.Core.dll* and optional
+*FarNet.FSharp.dll*. These assemblies are installed together with the module
+*FarNet.FSharpFar*.
+
+You may remove not used optional references but they are harmless.
+
+When you build a project the post build step copies built files to the FarNet
+module directory. Ensure Far Manager is not running to avoid files in use.
+
+The module created from the template adds a "Hello" item to the Far Manager
+plugin menus. This item shows a message box.
+
+## Debugging
+
+Press `[F5]` to starts debugging of your module.
+Debug modes:
+
+- Start Far (Visual Studio, VSCode default mode)
+    - The build step is called at first and then debugging starts. *Far.exe*
+      should be in the path or you should adjust settings.
+- Attach single Far (select in VSCode)
+    - Attach to the already running single *Far.exe*.
+- Attach selected Far (select in VSCode)
+    - Choose one of the several running *Far.exe*.
