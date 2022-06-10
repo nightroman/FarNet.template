@@ -1,3 +1,8 @@
-# FarNet module FarNetCSharp
+# FarNet module FarNetFSharp
 
 `FarNetFSharp` is used for ...
+
+## See also
+
+- [FarNet](https://github.com/nightroman/FarNet#readme)
+- [FarNet.template](https://github.com/nightroman/FarNet.template#readme)

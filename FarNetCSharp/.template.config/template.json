@@ -3,11 +3,17 @@
   "author": "Roman Kuzmin",
   "classifications": [ "FarNet", "Module" ],
   "identity": "FarNet.module.CSharp",
-  "groupIdentity":"FarNet.module",
+  "groupIdentity": "FarNet.module",
   "name": "FarNet module",
   "shortName": "farnet",
   "sourceName": "FarNetCSharp",
   "preferNameDirectory": true,
-  "guids": [ "f584e496-b801-4df3-be4f-2848d3a6e77c" ],
-  "tags": { "language": "C#", "type":"project" }
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "guids": [
+    "f584e496-b801-4df3-be4f-2848d3a6e77c",
+    "30bc4a2c-6e28-43cb-ad38-5c0ee6b7f28f"
+  ]
 }

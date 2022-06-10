@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="Host.fs" />
     <Compile Include="Tool1.fs" />
+    <Compile Include="Command1.fs" />
   </ItemGroup>
   <ItemGroup>
     <MyItem Include="$(OutDir)\$(AssemblyName).dll" />

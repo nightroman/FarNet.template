@@ -5,8 +5,8 @@ open FarNet
 /// Use its constructor for initializing module pieces.
 /// Remove this file if the host is not needed.
 [<AllowNullLiteral>]
-type Host () as this =
-    inherit ModuleHost ()
+type Host() as this =
+    inherit ModuleHost()
     static let mutable instance : Host = null
 
     do

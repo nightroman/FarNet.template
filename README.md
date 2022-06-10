@@ -29,9 +29,9 @@ dotnet new -l
 The list should contain "FarNet module":
 
 ```
-Templates       Short Name   Language   Tags
------------------------------------------------------
-FarNet module   farnet       [C#], F#   FarNet/Module
+Template Name  Short Name  Language  Tags
+-------------  ----------  --------  -------------
+FarNet module  farnet      [C#],F#   FarNet/Module
 ```
 
 To create a C# (default) or F# module project, create a new folder with your
@@ -69,37 +69,35 @@ Requirements:
 
 ## Project details
 
-- *.vscode*
-    - *launch.json* - VSCode debug settings
-    - *tasks.json* - VSCode build task
-- *Properties*
-    - *launchSettings.json* - Visual Studio debug settings
-- *Name.csproj* or *Name.fsproj* - project file
-- *README.md* - documentation file
-- *Host.cs* or *Host.fs* - optional module host
-- *Tool1.cs* or *Tool1.fs* - plugin menu item "Hello"
+- `.vscode`
+    - `launch.json` - VSCode debug settings
+    - `tasks.json` - VSCode build task
+- `Properties`
+    - `launchSettings.json` - Visual Studio debug settings
+- `README.md` - documentation file
+- `MODULE_NAME.csproj/fsproj` - project file
+- `Host.cs/fs` - optional module host and its instance
+- `Tool1.cs/fs` - plugin menu item "Hello from MODULE_NAME"
+- `Command1.cs/fs` - command invoked using "MODULE_NAME:" prefix
 
-All projects reference assemblies *FarNet* and optional *FarNet.Tools*.
+All projects reference assemblies `FarNet` and optional `FarNet.Tools`.
 
-F# projects reference *FSharp.Core.dll* and optional *FarNet.FSharp.dll*. They
-are installed together with the module *FarNet.FSharpFar* (really must have if
+F# projects reference `FSharp.Core.dll` and optional `FarNet.FSharp.dll`. They
+are installed together with the module `FarNet.FSharpFar` (really must have if
 you develop in F# for Far Manager).
 
 When you build a project the post build step copies built files to the FarNet
 module directory. Ensure Far Manager is not running to avoid files in use.
 
-The module created from the template adds a "Hello" item to the Far Manager
-plugin menus. This item shows a message box.
-
 ## Debugging
 
-Press `[F5]` to starts debugging of your module.
+Press `[F5]` to starts debugging.
 Debug modes:
 
 - Start Far (Visual Studio, VSCode default mode)
-    - The build step is called at first and then debugging starts. *Far.exe*
+    - The build step is called at first and then debugging starts.`Far.exe`
       should be in the path or you should adjust settings.
 - Attach single Far (select in VSCode)
-    - Attach to the already running single *Far.exe*.
+    - Attach to the already running single `Far.exe`.
 - Attach selected Far (select in VSCode)
-    - Choose one of the several running *Far.exe*.
+    - Choose one of the several running `Far.exe`.
