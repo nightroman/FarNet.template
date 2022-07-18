@@ -4,7 +4,7 @@
     <MyOutDir>$(FarHome)\FarNet\Modules\$(AssemblyName)</MyOutDir>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RunPostBuildEvent>1</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
@@ -12,17 +12,12 @@
       <HintPath>$(FarHome)\FarNet\FarNet.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FarNet.Tools">
-      <HintPath>$(FarHome)\FarNet\FarNet.Tools.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <MyItem Include="$(OutDir)\$(AssemblyName).dll" />
-    <MyItem Include="$(OutDir)\$(AssemblyName).pdb" Condition="'$(Configuration)' == 'Debug'" />
+    <MyItem Include="$(OutDir)\$(AssemblyName).pdb" />
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Copy DestinationFolder="$(MyOutDir)" SourceFiles="@(MyItem)" SkipUnchangedFiles="true" />
-    <Delete Files="$(MyOutDir)\$(AssemblyName).pdb" Condition="'$(Configuration)' == 'Release'" />
   </Target>
 </Project>

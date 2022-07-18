@@ -5,14 +5,12 @@ FarNet module template for C# and F# projects
 [.NET SDK]: https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro
 [FarNet]: https://github.com/nightroman/FarNet#readme
 
-With [.NET SDK] installed with Visual Studio 2017+ or manually, the easiest way
+With [.NET SDK] v6 installed with Visual Studio or manually, the easiest way
 to create module projects for [FarNet] is using *FarNet.template* from the
 NuGet gallery.
 
 Projects created from the template can be used for development and debugging in
 Visual Studio and VSCode.
-
-*.NET Core is not supported at the moment*, see [#16](https://github.com/nightroman/FarNet/issues/16).
 
 To install the FarNet module template from the NuGet gallery, run:
 
@@ -54,7 +52,7 @@ Before opening created projects in Visual Studio or VSCode ensure you have the
 environment variable `FARHOME` set to the Far Manager home. If it is missing
 then the development location `C:\Bin\Far\x64` is used, see the project file
 and change if needed. If you start Visual Studio or VSCode from Far Manager
-then FARHOME is set.
+then FARHOME is set automatically.
 
 ## Visual Studio
 
