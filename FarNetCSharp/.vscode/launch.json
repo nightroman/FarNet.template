@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Start Far",
-      "type": "clr",
+      "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
       "program": "Far.exe",
@@ -14,13 +14,13 @@
     },
     {
         "name": "Attach single Far",
-        "type": "clr",
+        "type": "coreclr",
         "request": "attach",
         "processName": "Far.exe"
     },
     {
         "name": "Attach selected Far",
-        "type": "clr",
+        "type": "coreclr",
         "request": "attach",
         "processId": "${command:pickProcess}"
     }
