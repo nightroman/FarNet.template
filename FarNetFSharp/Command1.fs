@@ -3,8 +3,7 @@ open FarNet
 open System
 open System.Data.Common
 
-[<ModuleCommand(Name = "FarNetFSharp", Prefix = "FarNetFSharp")>]
-[<Guid("0d526cb9-7006-4ab4-8b82-7bc5d3cb8e2b")>]
+[<ModuleCommand(Name = "FarNetFSharp", Prefix = "FarNetFSharp", Id = "0d526cb9-7006-4ab4-8b82-7bc5d3cb8e2b")>]
 type Command1() =
     inherit ModuleCommand()
     override _.Invoke(_, e) =

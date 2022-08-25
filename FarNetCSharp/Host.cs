@@ -1,27 +1,25 @@
-﻿using System;
-using FarNet;
+﻿using FarNet;
 
-namespace FarNetCSharp
+namespace FarNetCSharp;
+
+/// <summary>
+/// The host is created once when the module is loaded.
+/// Use its constructor for initializing module pieces.
+/// Remove this file if the host is not needed.
+/// </summary>
+public class Host : ModuleHost
 {
 	/// <summary>
-	/// The host is created once when the module is loaded.
-	/// Use its constructor for initializing module pieces.
-	/// Remove this file if the host is not needed.
+	/// Use this for GetString, GetHelpTopic, ShowHelpTopic.
 	/// </summary>
-	public class Host : ModuleHost
+	public static Host Instance { get; private set; }
+
+	public Host()
 	{
-		/// <summary>
-		/// Use this for GetString, GetHelpTopic, ShowHelpTopic.
-		/// </summary>
-		public static Host Instance { get; private set; }
+		// keep the instance
+		Instance = this;
 
-		public Host()
-		{
-			// keep the instance
-			Instance = this;
-
-			// add your code here
-			//...
-		}
+		// add your code here
+		//...
 	}
 }

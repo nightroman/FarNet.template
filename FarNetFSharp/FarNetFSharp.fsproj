@@ -6,6 +6,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
     <RunPostBuildEvent>1</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
@@ -27,11 +28,7 @@
     <Compile Include="Tool1.fs" />
     <Compile Include="Command1.fs" />
   </ItemGroup>
-  <ItemGroup>
-    <MyItem Include="$(OutDir)\$(AssemblyName).dll" />
-    <MyItem Include="$(OutDir)\$(AssemblyName).pdb" />
-  </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Copy DestinationFolder="$(MyOutDir)" SourceFiles="@(MyItem)" SkipUnchangedFiles="true" />
+    <Exec Command="dotnet publish -c $(Configuration) -o $(MyOutDir) --no-build" />
   </Target>
 </Project>

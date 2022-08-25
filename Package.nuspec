@@ -2,9 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FarNet.template</id>
-    <version>2.0.1</version>
+    <version>2.2.0</version>
     <releaseNotes>
-Use "coreclr" in launch.json
+Requires FarNet 6.0.6
+- Use new module ids.
+- Build as ALC modules.
     </releaseNotes>
     <description>
 FarNet module template for C# and F# projects.
