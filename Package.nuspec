@@ -2,21 +2,19 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FarNet.template</id>
-    <version>2.2.0</version>
+    <version>3.0.0</version>
     <releaseNotes>
-Requires FarNet 6.0.6
-- Use new module ids.
-- Build as ALC modules.
+Support FarNet modules (farnet-module) and scripts (farnet-script).
     </releaseNotes>
     <description>
-FarNet module template for C# and F# projects.
+FarNet module and script template for C# and F# projects.
     </description>
     <authors>Roman Kuzmin</authors>
     <owners>Roman Kuzmin</owners>
     <projectUrl>https://github.com/nightroman/FarNet.template</projectUrl>
     <license type="expression">BSD-2-Clause</license>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <tags>FarManager FarNet Module Template CSharp FSharp</tags>
+    <tags>FarManager FarNet Module Script Template CSharp FSharp</tags>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
