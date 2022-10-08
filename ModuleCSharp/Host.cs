@@ -1,6 +1,6 @@
 ﻿using FarNet;
 
-namespace FarNetCSharp;
+namespace ModuleCSharp;
 
 /// <summary>
 /// The host is created once when the module is loaded.

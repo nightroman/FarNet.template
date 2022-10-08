@@ -1,6 +1,6 @@
-# FarNet module FarNetFSharp
+# FarNet module ModuleFSharp
 
-`FarNetFSharp` is used for ...
+`ModuleFSharp` is used for ...
 
 ## See also
 

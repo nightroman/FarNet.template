@@ -1,4 +1,4 @@
-﻿namespace FarNetFSharp
+﻿namespace ModuleFSharp
 open FarNet
 
 /// The host is created once when the module is loaded.

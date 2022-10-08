@@ -2,18 +2,18 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "Roman Kuzmin",
   "classifications": [ "FarNet", "Module" ],
-  "identity": "FarNet.module.CSharp",
+  "identity": "FarNet.module.FSharp",
   "groupIdentity": "FarNet.module",
   "name": "FarNet module",
-  "shortName": "farnet",
-  "sourceName": "FarNetCSharp",
+  "shortName": "farnet-module",
+  "sourceName": "ModuleFSharp",
   "preferNameDirectory": true,
   "tags": {
-    "language": "C#",
+    "language": "F#",
     "type": "project"
   },
   "guids": [
-    "f584e496-b801-4df3-be4f-2848d3a6e77c",
-    "30bc4a2c-6e28-43cb-ad38-5c0ee6b7f28f"
+    "cc0ecb2f-552a-4fe4-90f0-227077386890",
+    "0d526cb9-7006-4ab4-8b82-7bc5d3cb8e2b"
   ]
 }

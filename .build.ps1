@@ -9,8 +9,8 @@ param(
 )
 
 task build {
-	exec {dotnet build FarNetCSharp\FarNetCSharp.csproj /p:FarHome=$FarHome /p:Configuration=$Configuration}
-	exec {dotnet build FarNetFSharp\FarNetFSharp.fsproj /p:FarHome=$FarHome /p:Configuration=$Configuration}
+	exec {dotnet build ModuleCSharp\ModuleCSharp.csproj /p:FarHome=$FarHome /p:Configuration=$Configuration}
+	exec {dotnet build ModuleFSharp\ModuleFSharp.fsproj /p:FarHome=$FarHome /p:Configuration=$Configuration}
 }
 
 task clean {
@@ -18,15 +18,15 @@ task clean {
 }
 
 task sync {
-	Assert-SameFile FarNetCSharp\.vscode\launch.json FarNetFSharp\.vscode\launch.json
-	Assert-SameFile FarNetCSharp\.vscode\tasks.json FarNetFSharp\.vscode\tasks.json
-	Assert-SameFile FarNetCSharp\Properties\launchSettings.json FarNetFSharp\Properties\launchSettings.json
+	Assert-SameFile ModuleCSharp\.vscode\launch.json ModuleFSharp\.vscode\launch.json
+	Assert-SameFile ModuleCSharp\.vscode\tasks.json ModuleFSharp\.vscode\tasks.json
+	Assert-SameFile ModuleCSharp\Properties\launchSettings.json ModuleFSharp\Properties\launchSettings.json
 }
 
 task publish sync, {
 	remove z
-	exec {robocopy FarNetCSharp z\content\FarNetCSharp /s /xd bin obj .vs} (0..2)
-	exec {robocopy FarNetFSharp z\content\FarNetFSharp /s /xd bin obj .vs} (0..2)
+	exec {robocopy ModuleCSharp z\content\ModuleCSharp /s /xd bin obj .vs} (0..2)
+	exec {robocopy ModuleFSharp z\content\ModuleFSharp /s /xd bin obj .vs} (0..2)
 	Copy-Item -Destination z @(
 		'README.md'
 		'Package.nuspec'
@@ -59,15 +59,15 @@ function Test-Template($Command) {
 	remove C:\tmp\tryFarNetTemplate, $FarHome\FarNet\Modules\tryFarNetTemplate
 }
 
-task testFarNetCSharp {
-	Test-Template { dotnet new farnet }
+task testModuleCSharp {
+	Test-Template { dotnet new farnet-module }
 }
 
-task testFarNetFSharp {
-	Test-Template { dotnet new farnet -lang F# }
+task testModuleFSharp {
+	Test-Template { dotnet new farnet-module -lang F# }
 }
 
-task test testFarNetCSharp, testFarNetFSharp
+task test testModuleCSharp, testModuleFSharp
 
 # Synopsis: Next dev cycle.
 task . uninstall, nuget, install, clean

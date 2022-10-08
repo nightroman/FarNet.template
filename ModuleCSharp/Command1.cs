@@ -2,9 +2,9 @@
 using System;
 using System.Data.Common;
 
-namespace FarNetCSharp;
+namespace ModuleCSharp;
 
-[ModuleCommand(Name = "FarNetCSharp", Prefix = "FarNetCSharp", Id = "30bc4a2c-6e28-43cb-ad38-5c0ee6b7f28f")]
+[ModuleCommand(Name = "ModuleCSharp", Prefix = "ModuleCSharp", Id = "30bc4a2c-6e28-43cb-ad38-5c0ee6b7f28f")]
 public class Command1 : ModuleCommand
 {
 	public override void Invoke(object sender, ModuleCommandEventArgs e)
