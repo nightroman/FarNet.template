@@ -2,9 +2,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FarNet.template</id>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <releaseNotes>
-Support FarNet modules (farnet-module) and scripts (farnet-script).
+Add sample fn-commands to script methods.
     </releaseNotes>
     <description>
 FarNet module and script template for C# and F# projects.
