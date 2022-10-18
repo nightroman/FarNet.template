@@ -2,9 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FarNet.template</id>
-    <version>3.0.1</version>
+    <version>3.0.2</version>
     <releaseNotes>
-Add sample fn-commands to script methods.
+Use EnableDynamicLoading in scripts, use OutDir directly in modules.
+As a result:
+- scripts may use NuGet packages right away
+- modules do not have to call post-build publish
     </releaseNotes>
     <description>
 FarNet module and script template for C# and F# projects.
