@@ -42,12 +42,12 @@ task nuget publish, {
 
 task install {
 	assert ($name = (Get-Item FarNet.template.*.nupkg).Name)
-	exec {dotnet new -i $name}
+	exec {dotnet new install $name}
 }
 
 task uninstall {
 	# fails if not installed
-	dotnet new -u FarNet.template
+	dotnet new uninstall FarNet.template
 }
 
 function Test-Template($Folder, $Command) {
