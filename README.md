@@ -2,10 +2,10 @@
 
 FarNet module and script template for C# and F# projects
 
-[.NET SDK]: https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro
+[.NET SDK]: https://aka.ms/dotnet/download
 [FarNet]: https://github.com/nightroman/FarNet#readme
 
-With [.NET SDK] v6 installed with Visual Studio or manually, the easiest way to
+With [.NET SDK] 7.0 installed with Visual Studio or manually, the easiest way to
 create module and script projects for [FarNet] is using *FarNet.template* from
 the NuGet gallery.
 
