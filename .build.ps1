@@ -25,10 +25,10 @@ task sync {
 
 task publish sync, {
 	remove z
-	exec {robocopy ModuleCSharp z\content\ModuleCSharp /s /xd bin obj .vs} (0..2)
-	exec {robocopy ModuleFSharp z\content\ModuleFSharp /s /xd bin obj .vs} (0..2)
-	exec {robocopy ScriptCSharp z\content\ScriptCSharp /s /xd bin obj .vs} (0..2)
-	exec {robocopy ScriptFSharp z\content\ScriptFSharp /s /xd bin obj .vs} (0..2)
+	exec {robocopy ModuleCSharp z\content\ModuleCSharp /s /xd bin obj .vs} 1
+	exec {robocopy ModuleFSharp z\content\ModuleFSharp /s /xd bin obj .vs} 1
+	exec {robocopy ScriptCSharp z\content\ScriptCSharp /s /xd bin obj .vs} 1
+	exec {robocopy ScriptFSharp z\content\ScriptFSharp /s /xd bin obj .vs} 1
 	Copy-Item -Destination z @(
 		'README.md'
 		'Package.nuspec'

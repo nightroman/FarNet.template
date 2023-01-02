@@ -18,6 +18,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Demo.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>

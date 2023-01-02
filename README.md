@@ -15,13 +15,13 @@ Visual Studio and VSCode.
 To install the FarNet template from the NuGet gallery, run:
 
 ```
-dotnet new -i FarNet.template
+dotnet new install FarNet.template
 ```
 
 Take a look at all templates:
 
 ```
-dotnet new -l
+dotnet new list
 ```
 
 The list should contain "FarNet module" and "FarNet script":
@@ -46,7 +46,7 @@ dotnet new farnet-script -lang F#
 To uninstall the template, run:
 
 ```
-dotnet new -u FarNet.template
+dotnet new uninstall FarNet.template
 ```
 
 ## Created FarNet project
@@ -90,7 +90,7 @@ Module projects include:
 
 Script projects include:
 
-- `Demo.cs/fs` - method invoked by `fn: script=PROJECT_NAME; method=PROJECT_NAME.Demo.Message`
+- `Program.cs/fs` - method invoked by `fn: script=PROJECT_NAME; method=.Program.Run`
 
 All projects reference `FarNet.dll`.
 
