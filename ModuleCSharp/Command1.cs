@@ -9,21 +9,24 @@ public class Command1 : ModuleCommand
 {
 	public override void Invoke(object sender, ModuleCommandEventArgs e)
 	{
+		// The format of command line is up to the module.
+		// Here is the parser of connection string format.
+		var parameters = ParseParameters(e.Command);
+
+		Far.Api.UI.WriteLine($"Parsed {parameters.Count} parameters:");
+		foreach (string key in parameters.Keys)
+			Far.Api.UI.WriteLine($"{key} = {parameters[key]}");
+	}
+
+	static DbConnectionStringBuilder ParseParameters(string text)
+	{
 		try
 		{
-			// The format of command line is up to the module.
-			// Here is the parser of connection string format.
-			var parameters = new DbConnectionStringBuilder { ConnectionString = e.Command };
-
-			Far.Api.UI.WriteLine($"Parsed {parameters.Count} parameters:");
-			foreach (string key in parameters.Keys)
-				Far.Api.UI.WriteLine($"{key} = {parameters[key]}");
+			return new DbConnectionStringBuilder { ConnectionString = text };
 		}
 		catch (Exception ex)
 		{
-			Far.Api.UI.WriteLine(
-				$"Please use semicolon separated key=value pairs. Error: {ex.Message}",
-				ConsoleColor.Red);
+			throw new ModuleException($"Use semicolon separated key=value pairs. Error: {ex.Message}");
 		}
 	}
 }
