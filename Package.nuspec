@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FarNet.template</id>
-    <version>5.0.0</version>
+    <version>6.0.0</version>
     <authors>Roman Kuzmin</authors>
     <owners>Roman Kuzmin</owners>
     <license type="expression">BSD-2-Clause</license>
@@ -11,7 +11,7 @@
     <projectUrl>https://github.com/nightroman/FarNet.template</projectUrl>
     <description>FarNet module and script template for C# and F# projects.</description>
     <releaseNotes>
-.NET 8.0, FarNet 8.0.0
+.NET 9.0, FarNet 9.0.0
     </releaseNotes>
     <tags>FarManager FarNet Module Script Template CSharp FSharp</tags>
     <packageTypes>

@@ -5,14 +5,13 @@ FarNet module and script template for C# and F# projects
 [.NET SDK]: https://aka.ms/dotnet/download
 [FarNet]: https://github.com/nightroman/FarNet#readme
 
-With [.NET SDK] 8.0 installed with Visual Studio or manually, the easiest way to
-create module and script projects for [FarNet] is using *FarNet.template* from
-the NuGet gallery.
+With [.NET SDK] 9.0 installed with Visual Studio or manually, the easiest way to
+create module and script projects for [FarNet] is using `FarNet.template` NuGet.
 
 Projects created from the template can be used for development and debugging in
 Visual Studio and VSCode.
 
-To install the FarNet template from the NuGet gallery, run:
+To install the FarNet template from NuGet, run:
 
 ```
 dotnet new install FarNet.template
@@ -39,8 +38,8 @@ with the new module or script name, change to it, and invoke one of these:
 ```
 dotnet new farnet-module
 dotnet new farnet-script
-dotnet new farnet-module -lang F#
-dotnet new farnet-script -lang F#
+dotnet new farnet-module --language F#
+dotnet new farnet-script --language F#
 ```
 
 To uninstall the template, run:
@@ -67,7 +66,7 @@ The project is ready to use in Visual Studio.
 
 Requirements:
 
-- [VSCode C# extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) for C# projects and for debugging F# projects.
+- [VSCode C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) for C# projects and for debugging F# projects.
 - [VSCode F# extension](https://marketplace.visualstudio.com/items?itemName=Ionide.Ionide-fsharp) for F# projects.
 
 ## Project details
@@ -106,11 +105,10 @@ This command is used to build projects:
 
 Alternatively, you may build from Visual Studio or VSCode.
 
-When you build a module project then the post build step publishes files to the
-FarNet module directory. Ensure Far Manager is not running to avoid files in
-use.
+When you build a module project the output goes to FarNet module folder.
+Ensure Far Manager is not running to avoid files in use.
 
-When you build a script project the output is sent to the FarNet script folder.
+When you build a script project the output goes to FarNet script folder.
 If you test simple methods with `unload=true` then you do not have to restart.
 
 ## Debugging
