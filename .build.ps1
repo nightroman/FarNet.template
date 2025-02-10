@@ -33,7 +33,7 @@ task sync {
 	Assert-SameFile ModuleCSharp\Properties\launchSettings.json ScriptFSharp\Properties\launchSettings.json
 }
 
-task publish sync, {
+task package sync, {
 	remove z
 	exec { robocopy ModuleCSharp z\content\ModuleCSharp /s /xd .vs bin obj } 1
 	exec { robocopy ModuleFSharp z\content\ModuleFSharp /s /xd .vs bin obj } 1
@@ -47,34 +47,40 @@ task publish sync, {
 	)
 
 	Assert-SameFile.ps1 -Text -View $env:MERGE -Result (Get-ChildItem z\content -Recurse -File -Name) -Sample @'
-ModuleCSharp\Command1.cs
+ModuleCSharp\Command.cs
 ModuleCSharp\Host.cs
+ModuleCSharp\ModuleCSharp.build.ps1
 ModuleCSharp\ModuleCSharp.csproj
 ModuleCSharp\README.md
-ModuleCSharp\Tool1.cs
+ModuleCSharp\Tool.cs
 ModuleCSharp\.template.config\template.json
 ModuleCSharp\.vscode\launch.json
 ModuleCSharp\.vscode\tasks.json
 ModuleCSharp\Properties\launchSettings.json
-ModuleFSharp\Command1.fs
+ModuleFSharp\Command.fs
 ModuleFSharp\Host.fs
+ModuleFSharp\ModuleFSharp.build.ps1
 ModuleFSharp\ModuleFSharp.fsproj
 ModuleFSharp\README.md
-ModuleFSharp\Tool1.fs
+ModuleFSharp\Tool.fs
 ModuleFSharp\.template.config\template.json
 ModuleFSharp\.vscode\launch.json
 ModuleFSharp\.vscode\tasks.json
 ModuleFSharp\Properties\launchSettings.json
-ScriptCSharp\Program.cs
 ScriptCSharp\README.md
+ScriptCSharp\ScriptCSharp.build.ps1
 ScriptCSharp\ScriptCSharp.csproj
+ScriptCSharp\Test.cs
+ScriptCSharp\Test.Message.fn.command
 ScriptCSharp\.template.config\template.json
 ScriptCSharp\.vscode\launch.json
 ScriptCSharp\.vscode\tasks.json
 ScriptCSharp\Properties\launchSettings.json
-ScriptFSharp\Program.fs
 ScriptFSharp\README.md
+ScriptFSharp\ScriptFSharp.build.ps1
 ScriptFSharp\ScriptFSharp.fsproj
+ScriptFSharp\Test.fs
+ScriptFSharp\Test.Message.fn.command
 ScriptFSharp\.template.config\template.json
 ScriptFSharp\.vscode\launch.json
 ScriptFSharp\.vscode\tasks.json
@@ -82,8 +88,8 @@ ScriptFSharp\Properties\launchSettings.json
 '@
 }
 
-task nuget publish, {
-	exec { NuGet.exe pack z\Package.nuspec }
+task nuget package, {
+	exec { NuGet.exe pack z\Package.nuspec -NoPackageAnalysis }
 }
 
 task install {
@@ -101,8 +107,10 @@ function Test-Template($Folder, $Command) {
 	$null = mkdir C:\tmp\tryFarNetTemplate
 
 	Push-Location C:\tmp\tryFarNetTemplate
+
+	# new project, build, clean
 	exec $Command
-	exec { dotnet build }
+	Invoke-Build
 
 	requires -Path $FarHome\FarNet\$Folder\tryFarNetTemplate\tryFarNetTemplate.dll
 
@@ -129,4 +137,4 @@ task testScriptFSharp {
 task test testModuleCSharp, testModuleFSharp, testScriptCSharp, testScriptFSharp
 
 # Synopsis: Next dev cycle.
-task . uninstall, nuget, install, clean
+task . uninstall, nuget, install, test, clean

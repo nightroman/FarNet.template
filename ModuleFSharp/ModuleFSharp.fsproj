@@ -5,6 +5,7 @@
     <OutDir>$(FarHome)\FarNet\Modules\$(AssemblyName)</OutDir>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <TargetFramework>net9.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="$(FarHome)\FarNet\FarNet.dll">
@@ -19,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Host.fs" />
-    <Compile Include="Tool1.fs" />
-    <Compile Include="Command1.fs" />
+    <Compile Include="Tool.fs" />
+    <Compile Include="Command.fs" />
   </ItemGroup>
 </Project>
