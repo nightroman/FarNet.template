@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>FarNet.template</id>
-    <version>6.2.0</version>
+    <version>6.2.1</version>
     <authors>Roman Kuzmin</authors>
     <owners>Roman Kuzmin</owners>
     <license type="expression">BSD-2-Clause</license>
@@ -11,9 +11,8 @@
     <projectUrl>https://github.com/nightroman/FarNet.template</projectUrl>
     <description>FarNet module and script template for C# and F# projects.</description>
     <releaseNotes>
-Use MSBuild properties Nullable, ImplicitUsings, TreatWarningsAsErrors.
-Rework and tidy up, add ".fn.command" files to script templates.
-Add basic build scripts.
+Use "Script" shortcut by default.
+Use splitter `;;` instead of `::`.
     </releaseNotes>
     <tags>FarManager FarNet Module Script Template CSharp FSharp</tags>
     <packageTypes>

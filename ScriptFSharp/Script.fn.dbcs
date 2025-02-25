@@ -1,6 +1,6 @@
 ﻿script=ScriptFSharp;
-method=.Test.Message;
+method=Message;
 unload=true
-::
+;;
 name=John Doe;
 age=42

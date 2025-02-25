@@ -1,4 +1,4 @@
-﻿module ScriptFSharp.Test
+﻿module ScriptFSharp.Script
 open FarNet
 
 // fn: script=ScriptFSharp; method=.Test.Message

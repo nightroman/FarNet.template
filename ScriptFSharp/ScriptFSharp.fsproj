@@ -19,6 +19,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.fs" />
+    <Compile Include="Script.fs" />
   </ItemGroup>
 </Project>
